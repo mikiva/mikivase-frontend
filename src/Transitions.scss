@@ -1,0 +1,21 @@
+.fadeUp-enter {
+  opacity: 0;
+  transform: translateY(5px);
+  &.reversed {
+  transform: translateY(-15px);
+
+  }
+}
+.fadeUp-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms var(--easing), transform 300ms var(--easing);
+}
+.fadeUp-exit {
+  opacity: 1;
+}
+.fadeUp-exit-active {
+  opacity: 0;
+  transform: translateX(5px);
+  transition: opacity 300ms var(--easing), transform 300ms var(--easing);
+}

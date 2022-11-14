@@ -1,0 +1,39 @@
+.topnav.container {
+  display: flex;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 40px;
+  height: var(--nav-height);
+  z-index: 4;
+
+  img.brand {
+    min-width: 45px;
+
+  }
+
+  .nav {
+    position: relative;
+    width: 100%;
+  }
+
+  a.topnav__link-item {
+    padding: 10px;
+  }
+
+  nav {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+
+    .navbar {
+      display: flex;
+        align-items: center;
+    }
+  }
+}
+

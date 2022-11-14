@@ -1,0 +1,29 @@
+:root {
+    --dark-grey: darkGrey;
+    --color-text-secondary: darkGrey;
+    --color-text: #ccd6f6;
+    //--color-accent: #9a0087;
+    --color-accent: #64ffda;
+
+    --nav-height: 90px;
+    --easing: cubic-bezier(0.645,0.045,0.355,1);
+}
+
+
+body {
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: var(--color-text);
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+@font-face {
+    font-family: "Roboto Mono";
+    src: url(fonts/RobotoMono-VariableFont_wght.ttf) format("truetype");
+    font-weight: 100 800;
+}
