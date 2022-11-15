@@ -1,14 +1,20 @@
-import './App.scss';
+//import './App.scss';
+import "./index.scss";
+import "./Transitions.scss";
 import TopNav from "./TopNav";
 import PageContent from "./PageContent";
 import FadeInScrollTransition from "./FadeInScrollTransition";
+import PageFooter from "./PageFooter";
 
 function App() {
     return (
-        <div className="App">
-                <TopNav/>
+        <>
+        <div className="mx-auto bg-darkblue text-slate-300">
+            <TopNav/>
             <PageContent/>
+            <PageFooter />
         </div>
+        </>
     );
 }
 

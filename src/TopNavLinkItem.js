@@ -2,8 +2,8 @@ function TopNavLinkItem({href, text}) {
     return (
         <>
             <a href={href}
-               className="topnav__link-item">
-                <span style={{color: "var(--color-accent)"}}>&#47;</span>
+               className="hover:text-accent">
+                <span className="text-accent">&#47;#</span>
                 {text}</a>
         </>
     )

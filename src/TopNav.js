@@ -5,23 +5,22 @@ import FadeInScrollTransition from "./FadeInScrollTransition";
 
 function TopNav() {
     return (
-        <header className="topnav container">
-            <nav className="topnav navbar">
-                <div className="navbar navbar__left">
+        <header className="flex box-border fixed top-0 left-0 h-20  w-full justify-between items-center z-10 px-16">
+            <nav className="flex flex-1 justify-between items-center">
+                <div className="flex">
                     <FadeInScrollTransition timeout={100} reversed>
                         <a href="/">
 
-                            <img src={logo} alt="" className={"brand"}/>
+                            <img src={logo} alt="" className="w-8"/>
                         </a>
                     </FadeInScrollTransition>
                 </div>
-                <div className="navbar navbar__right">
+                <div className="flex gap-3 pr-3">
                     <FadeInScrollTransition timeout={300} reversed>
-
-                        <TopNavLinkItem href={"/#about"} text={"whoami"}/>
+                        <TopNavLinkItem href={"/#whoami"} text={"whoami"}/>
                     </FadeInScrollTransition>
                     <FadeInScrollTransition timeout={400} reversed>
-                        <TopNavLinkItem href={"/#Jobs"} text={"which"}/>
+                        <TopNavLinkItem href={"/#jobs"} text={"whatami"}/>
                     </FadeInScrollTransition>
                     <FadeInScrollTransition timeout={500} reversed>
                         <TopNavLinkItem href={"/#contact"} text={"where"}/>
