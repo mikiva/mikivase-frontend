@@ -44,7 +44,7 @@ section {
 h2.section-header {
   @apply text-3xl w-auto mb-9
   after:block after:content-['']
-  after:w-72 after:h-0.1 after:relative
+  after:h-0.1 after:relative
   after:bg-slate-600 after:ml-44 after:-top-4;
 }
 

@@ -3,12 +3,16 @@ import "./TopNav.scss";
 import FadeInScrollTransition from "./FadeInScrollTransition";
 import TopNavLogo from "./TopNavLogo";
 import {useEffect, useState} from "react";
+import TopNavLinks from "./TopNavLinks";
+import {logDOM} from "@testing-library/react";
 
 function TopNav() {
     const TOP_OFFSET = 45;
     const [show, setShow] = useState(true);
     const [isTop, setIsTop] = useState(window.scrollY < TOP_OFFSET);
     const [prevPos, setPrevPos] = useState(0);
+
+    const [showMenu, setShowMenu] = useState(false);
 
     function handleScroll() {
         const currentPos = window.scrollY;
@@ -19,9 +23,20 @@ function TopNav() {
         setPrevPos(currentPos <= 0 ? 0 : currentPos);
     }
 
+    function handleHashChange() {
+        console.log("hashchange")
+        setShowMenu(false);
+
+    }
+
     useEffect(() => {
         window.addEventListener("scroll", handleScroll, false);
+        window.addEventListener("hashChange", handleHashChange, false);
     });
+
+    useEffect(() => {
+
+    }, [showMenu])
 
 
     return (
@@ -38,19 +53,18 @@ function TopNav() {
                         </a>
                     </FadeInScrollTransition>
                 </div>
-                <div className="flex gap-3 pr-3">
-                    <FadeInScrollTransition timeout={200} reversed>
-                        <TopNavLinkItem href={"/#"} text={"~"}/>
-                    </FadeInScrollTransition>
-                    <FadeInScrollTransition timeout={300} reversed>
-                        <TopNavLinkItem href={"/#about"} text={"about"}/>
-                    </FadeInScrollTransition>
-                    <FadeInScrollTransition timeout={400} reversed>
-                        <TopNavLinkItem href={"/#whatami"} text={"whatami"}/>
-                    </FadeInScrollTransition>
-                    <FadeInScrollTransition timeout={500} reversed>
-                        <TopNavLinkItem href={"/#where"} text={"where"}/>
-                    </FadeInScrollTransition>
+                <div className="hidden md:flex gap-3 pr-3">
+                    <TopNavLinks/>
+                </div>
+                <div className="md:hidden">
+                    <button onClick={() => setShowMenu(true)}>menu</button>
+
+                    <aside
+                        className={`w-[min(75vw,400px)] transition-all flex flex-col gap-4 text-2xl justify-center items-center h-screen top-0 bottom-0 right-0 fixed bg-slate-700 ${showMenu ? "" : "right-[-100%]"} `}>
+                        <button onClick={() => setShowMenu(false)} className="text-7xl absolute top-4 right-10">&times;</button>
+                        <TopNavLinks onClick={() => setShowMenu(false)}/>
+                    </aside>
+
                 </div>
             </nav>
         </header>
