@@ -21,7 +21,7 @@ function FadeInScrollTransition({children, ...props}) {
         observer.observe(current);
 
         return () => observer.unobserve(current);
-    })
+    }, [props.timeout])
     return (
         <div className={`fadeUp-enter${isVisible ? "-active" : ""} ${props.reversed ? "reversed": ""}`} ref={domRef}>
             {children}

@@ -3,11 +3,11 @@ import mikiva from "./img/mikiva.png";
 
 function PageContentAbout() {
     return (
-        <section id={"whoami"} className="max-w-3xl">
+        <section id={"about"} className="max-w-3xl">
             <FadeInScrollTransition transitionDelay={500} timeout={100}>
-                <h2 className="section-header"><span className="text-accent">&#47;#</span>whoami</h2>
+                <h2 className="section-header"><span className="text-accent">&#47;#</span>about</h2>
             </FadeInScrollTransition>
-            <div className="grid grid-cols-[3fr_2fr] gap-9">
+            <div className="block md:grid grid-cols-[3fr_2fr] gap-9">
                 <FadeInScrollTransition transitionDelay={500} timeout={200}>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet at
                         consectetur dignissimos dolor
@@ -27,9 +27,9 @@ function PageContentAbout() {
 
                 <FadeInScrollTransition transitionDelay={500} timeout={300}>
                     <div id={"whoami-img-wrapper"}
-                        className="">
+                         className="max-w-xs max-md:mt-14 max-md:mx-auto max-md:mb-0">
 
-                        <img width={500} height={500} src={mikiva} className="object-cover rounded"/>
+                        <img width={500} height={500} src={mikiva} className="object-cover rounded" alt={"Don't I look pretty? Wait..."}/>
                     </div>
                 </FadeInScrollTransition>
             </div>

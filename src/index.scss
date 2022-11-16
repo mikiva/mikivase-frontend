@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "Transitions";
+
 
 :root {
   --dark-grey: darkGrey;
@@ -47,12 +49,13 @@ h2.section-header {
 }
 
 #whoami-img-wrapper {
-  @apply before:block before:absolute before:-z-10
-  before:w-full before:h-full before:border-accent
-  before:border-2 before:border-solid before:rounded
-  before:top-4 before:left-4
-  hover:before:top-3 hover:before:left-3
-  before:transition-all before:duration-200
+  @apply block relative w-full rounded;
+  @apply after:block after:absolute after:-z-10
+  after:w-full after:h-full after:border-accent
+  after:border-2 after:border-solid after:rounded
+  after:top-4 after:left-4
+  hover:after:top-3 hover:after:left-3
+  after:transition-all after:duration-200
 }
 
 @font-face {

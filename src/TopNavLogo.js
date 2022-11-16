@@ -1,20 +1,16 @@
-import {useState} from "react";
-
 function TopNavLogo() {
-
-    const [color, setColor] = useState("#64ffda");
-
 
     return (
         <>
-            <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 170" className="fill-slate-300">
+            <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 187 187" className="fill-slate-300">
                 <g>
-                    <polygon points="0 50 0 170 41.62 170 0 50"/>
-                    <polygon points="136 50 136 170 94.38 170 136 50"/>
+                    <polygon points="113 113 113 187 76 187 113 113"/>
+                    <polygon points="0 113 0 187 37 187 0 113"/>
                 </g>
-                <polygon points="67.88 87 52.97 43.5 38.06 0 67.88 0 97.7 0 82.79 43.5 67.88 87"/>
-                <rect x="136" y="0" width="34" height="34" className="fill-accent"/>
+                <polygon points="56.51 37 47.26 18.5 38.01 0 56.51 0 75 0 65.75 18.5 56.51 37"/>
+                <rect x="150" width="37" height="37" className="fill-accent"/>
             </svg>
+
         </>
     )
 
