@@ -60,7 +60,7 @@ function TopNav() {
                     <button onClick={() => setShowMenu(true)}>menu</button>
 
                     <aside
-                        className={`w-[min(75vw,400px)] transition-all flex flex-col gap-4 text-2xl justify-center items-center h-screen top-0 bottom-0 right-0 fixed bg-slate-700 ${showMenu ? "" : "right-[-100%]"} `}>
+                        className={`w-[min(60vw,350px)] transition-all flex flex-col gap-4 text-2xl justify-center items-center h-screen top-0 bottom-0 right-0 fixed bg-slate-900 shadow-xl ${showMenu ? "" : "right-[-100%]"} `}>
                         <button onClick={() => setShowMenu(false)} className="text-7xl absolute top-4 right-10">&times;</button>
                         <TopNavLinks onClick={() => setShowMenu(false)}/>
                     </aside>
