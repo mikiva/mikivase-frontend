@@ -9,7 +9,7 @@ import PageFooter from "./PageFooter";
 function App() {
     return (
         <>
-        <div className="mx-auto bg-darkblue text-slate-300">
+        <div className="mx-auto px-32 bg-darkblue text-slate-300">
             <TopNav/>
             <PageContent/>
             <PageFooter />

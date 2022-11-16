@@ -7,10 +7,13 @@ module.exports = {
         extend: {
             colors: {
                 "darkblue": "#0a192f",
-                "accent": "#64ffda",
+                "accent": "#d0168f",
             },
             height: {
                 "0.1": "1px"
+            },
+            fontSize: {
+                "7xl-dynamic": "clamp(40px, 8vw, 4.5rem)"
             }
 
         },
