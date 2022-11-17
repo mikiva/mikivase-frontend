@@ -4,6 +4,7 @@ import FadeInScrollTransition from "./FadeInScrollTransition";
 import TopNavLogo from "./TopNavLogo";
 import {useEffect, useState} from "react";
 import TopNavLinks from "./TopNavLinks";
+import {Bars3Icon, XMarkIcon} from "@heroicons/react/24/outline";
 
 function TopNav() {
     const TOP_OFFSET = 45;
@@ -42,8 +43,8 @@ function TopNav() {
 
     return (
         <header
-            className={`${!showTop && !isTop ? "-top-20": ""}${showTop ^ isTop ? "top-0 backdrop-blur bg-darkblue/75" : ""} bg-darkblue transition-all flex box-border fixed left-0 h-20 w-full justify-between items-center z-10 px-6 md:px-16 ${isTop ? "shadow-none top-2" : "shadow-2xl "}  `}>
-            <nav className="flex flex-1 justify-between items-center h-full">
+            className={`${!showTop && !isTop ? "-top-20" : ""}${showTop ^ isTop ? "top-0 backdrop-blur bg-darkblue/75" : ""} bg-darkblue transition-all flex box-border fixed left-0 h-20 w-full justify-between items-center z-10 px-6 md:px-16 ${isTop ? "shadow-none top-2" : "shadow-2xl "}  `}>
+            <nav className="flex flex-1 relative justify-between items-center h-full">
                 <div>
                     <FadeInScrollTransition timeout={100} reversed>
                         <a href="/" className="block w-12 h-12 overflow-hidden relative">
@@ -57,17 +58,24 @@ function TopNav() {
                 <div className="hidden md:flex gap-3 pr-3">
                     <TopNavLinks/>
                 </div>
-                <div className="md:hiddengi">
-                    <button onClick={() => setShowMenu(true)}>menu</button>
+                <div className="md:hidden z-20 w-12 relative">
+
+                        <button className="z-10 absolute text-5xl -top-4 w-12"
+                                onClick={() => setShowMenu(!showMenu)}>
+                            <FadeInScrollTransition timeout={300} instant reversed>
+
+                            <XMarkIcon className={`absolute transition-all ${showMenu ? "" : "opacity-0"}`}/>
+                            <Bars3Icon className={`absolute transition-all ${showMenu ? "opacity-0" : ""}`}/>
+                            </FadeInScrollTransition>
+                        </button>
 
                     <aside
                         className={`w-[min(60vw,350px)] transition-all flex flex-col gap-4 text-2xl justify-center items-center h-screen top-0 bottom-0 right-0 fixed bg-slate-900 shadow-xl ${showMenu ? "" : "right-[-100%]"} `}>
-                        <button onClick={() => setShowMenu(false)}
-                                className="text-7xl absolute top-4 right-10">&times;</button>
+
                         <TopNavLinks onClick={() => setShowMenu(false)}/>
                     </aside>
-
                 </div>
+
             </nav>
         </header>
     )

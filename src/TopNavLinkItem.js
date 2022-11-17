@@ -3,7 +3,7 @@ function TopNavLinkItem({href, text, onClick}) {
         <>
             <a href={href} onClick={onClick}
                className="hover:text-accent">
-                <span className="text-accent">&#47;#</span>
+                <span className="text-accent">#</span>
                 {text}</a>
         </>
     )

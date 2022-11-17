@@ -42,10 +42,10 @@ section {
 }
 
 h2.section-header {
-  @apply text-3xl w-auto mb-9
+  @apply text-2xl w-auto mb-9
   after:block after:content-['']
-  after:h-0.1 after:relative
-  after:bg-slate-600 after:ml-44 after:-top-4;
+  after:h-0.5 after:relative after:-rotate-3
+  after:bg-slate-600 after:md:-top-2 after:bg-accent/75 after:top-0
 }
 
 #whoami-img-wrapper {
@@ -56,6 +56,13 @@ h2.section-header {
   after:top-4 after:left-4
   hover:after:top-3 hover:after:left-3
   after:transition-all after:duration-200
+}
+
+.section-content{
+  position: relative;
+  &:before {
+    @apply md:content-[""] md:w-0.5 md:h-full md:bg-accent/75 md:rotate-3 md:block md:absolute md:left-3 md:top-0
+  }
 }
 
 @font-face {

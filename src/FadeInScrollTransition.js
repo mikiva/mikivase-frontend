@@ -5,25 +5,31 @@ function FadeInScrollTransition({children, ...props}) {
 
     const [isVisible, setVisible] = useState(false)
     const domRef = useRef(null);
+
     useEffect(() => {
+        let t;
         const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                setTimeout(() => {
-                    setVisible(entry.isIntersecting)
-                    if(entry.isIntersecting) observer.unobserve(entry.target)
+            const entry = entries[0]
+            t = setTimeout(() => {
+                setVisible(entry.isIntersecting || props.instant)
+                if (entry.isIntersecting || props.instant) observer.unobserve(entry.target)
 
-                }, props.timeout)
+            }, props.timeout)
 
-            });
+        })
 
-        }, {rootMargin: "-25px"})
         const {current} = domRef;
         observer.observe(current);
 
-        return () => observer.unobserve(current);
-    }, [props.timeout])
+        return () => {
+            observer.unobserve(current);
+            //clearTimeout(t)
+        }
+    }, [])
     return (
-        <div className={`fadeUp-enter${isVisible ? "-active" : ""} ${props.reversed ? "reversed": ""}`} ref={domRef}>
+        <div
+            className={`fadeUp-enter${isVisible ? "-active" : ""} ${props.reversed ? "reversed" : ""}`}
+            ref={domRef}>
             {children}
         </div>
     )

@@ -14,7 +14,8 @@ module.exports = {
             },
             fontSize: {
                 "7xl-dynamic": "clamp(40px, 8vw, 4.5rem)"
-            }
+            },
+
 
         },
     },

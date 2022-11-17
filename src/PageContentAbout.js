@@ -5,11 +5,11 @@ function PageContentAbout() {
     return (
         <section id={"about"} className="max-w-3xl">
             <FadeInScrollTransition transitionDelay={500} timeout={100}>
-                <h2 className="section-header"><span className="text-accent">&#47;#</span>about</h2>
+                <h2 className="section-header"><span className="text-accent">#</span>about</h2>
             </FadeInScrollTransition>
             <div className="block md:grid grid-cols-[3fr_2fr] gap-9">
                 <FadeInScrollTransition transitionDelay={500} timeout={200}>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet at
+                    <p className="md:pl-16 section-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet at
                         consectetur dignissimos dolor
                         dolorem error eum ex exercitationem illo in ipsum, itaque, laboriosam laborum minima
                         molestias
