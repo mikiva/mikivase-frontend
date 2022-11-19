@@ -4,7 +4,9 @@
 
 @import "Transitions";
 
-
+//*:hover {
+//  @apply outline-accent outline outline-1
+//}
 :root {
   --dark-grey: darkGrey;
   --color-text-secondary: darkGrey;
@@ -32,34 +34,63 @@ body, html {
   font-family: "Roboto Mono", source-code-pro, Consolas, monospace;
 }
 
-p {
-  @apply max-w-2xl text-sm;
-
-}
+//p {
+//  @apply max-w-2xl text-sm;
+//
+//}
 
 section {
   @apply mx-auto my-0 py-28;
 }
 
 h2.section-header {
-  @apply text-2xl w-auto mb-9
+  @apply text-xl w-auto mb-1
   after:block after:content-['']
-  after:h-0.5 after:relative after:-rotate-3
   after:bg-slate-600 after:md:-top-2 after:bg-accent/75 after:top-0
 }
 
-#whoami-img-wrapper {
+#whoami-img-wrapper, .corner-border-accent {
   @apply block relative w-full rounded;
-  @apply after:block after:absolute after:-z-10
-  after:w-full after:h-full after:border-accent
-  after:border-2 after:border-solid after:rounded
-  after:top-4 after:left-4
-  hover:after:top-3 hover:after:left-3
+  @apply before:block before:absolute before:-z-20
+  before:border-accent
+  before:border-2 before:border-solid before:rounded-tl
+  before:-top-2 before:-left-2
+  hover:before:-top-3
+  before:transition-all before:duration-200
+  before:border-b-0 before:border-r-0;
+
+  @apply after:block after:absolute after:-z-20
+  after:border-accent
+  after:border-2 after:border-solid after:rounded-br
+  after:-bottom-2 after:-right-2
+  hover:after:-bottom-3
   after:transition-all after:duration-200
+  after:border-l-0 after:border-t-0;
+
+  &.reversed {
+    @apply before:border-l-0 before:border-r-2 before:-right-2 before:left-unset before:rounded-none before:rounded-tr;
+    @apply after:border-r-0 after:border-l-2 after:right-unset after:-left-2 after:rounded-none after:rounded-bl
+  }
+
+  &:after, &:before {
+    height: 33%;
+    aspect-ratio: 1/1;
+  }
 }
 
-.section-content{
+.corner-border-accentm .corner-border-accent.reversed {
+  @apply max-md:before:border-0;
+  @apply max-md:after:border-0;
+  .reversed {
+    @apply before:border-l-0 before:border-r-2 before:-right-2 before:left-unset before:rounded-none before:rounded-tr;
+    @apply after:border-r-0 after:border-l-2 after:right-unset after:-left-2 after:rounded-none after:rounded-bl
+  }
+}
+
+
+.section-content {
   position: relative;
+
   &:before {
     @apply md:content-[""] md:w-0.5 md:h-full md:bg-accent/75 md:rotate-3 md:block md:absolute md:left-3 md:top-0
   }
