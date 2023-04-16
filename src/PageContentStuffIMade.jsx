@@ -66,7 +66,7 @@ function PageContentStuffIMade() {
                     </FadeInScrollTransition>
             </div>
             <div className="max-w-3xl mt-9">
-                <FadeInScrollTransition timeout={700}>
+                <FadeInScrollTransition timeout={100}>
                     <p className="px-4 py-2  border-b border-accent/75">And that is about it... for now.</p>
                 </FadeInScrollTransition>
             
