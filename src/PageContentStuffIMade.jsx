@@ -26,7 +26,6 @@ function PageContentStuffIMade() {
 
 
 
-
     return (
         <section id={"stuffimade"} className="max-w-3xl">
             <FadeInScrollTransition timeout={100}>
@@ -52,20 +51,19 @@ function PageContentStuffIMade() {
             </div>
             <div className="max-w-3xl mt-9">
                 <FadeInScrollTransition timeout={700}>
-                    <p className="px-4 py-2  border-b border-accent/75">Posters for some musicals and theatre.</p>
-                </FadeInScrollTransition>
+                    <p className="px-4 py-2  border-b border-accent/75" id={"poster-header"}>Posters for some musicals and theatre.</p>
                 <div className="flex  gap-2 flex-wrap justify-center py-5">
 
                     {files.map((file, idx) => {
-
                         return (
-                            <FadeInScrollTransition timeout={800 + (100 * idx)} key={idx}>
+                            <FadeInScrollTransition timeout={100} key={idx}>
                                 <img src={file} alt="" key={idx} className="max-w-[150px] md:max-w-[250px]" />
                             </FadeInScrollTransition >
                         )
-
+                        
                     })}
                 </div>
+                    </FadeInScrollTransition>
             </div>
             <div className="max-w-3xl mt-9">
                 <FadeInScrollTransition timeout={700}>
