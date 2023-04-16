@@ -60,7 +60,7 @@ function PageContentStuffIMade() {
 
                         return (
                             <FadeInScrollTransition timeout={800 + (100 * idx)} key={idx}>
-                                <img src={file} alt="" key={idx} className="max-w-[150px]" />
+                                <img src={file} alt="" key={idx} className="max-w-[150px] md:max-w-[250px]" />
                             </FadeInScrollTransition >
                         )
 
