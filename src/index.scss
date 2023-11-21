@@ -78,7 +78,7 @@ h2.section-header {
   }
 }
 
-.corner-border-accentm .corner-border-accent.reversed {
+.corner-border-accent, .corner-border-accent.reversed {
   @apply max-md:before:border-0;
   @apply max-md:after:border-0;
   .reversed {
