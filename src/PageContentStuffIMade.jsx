@@ -50,23 +50,38 @@ function PageContentStuffIMade() {
       </div>
 
 
-            <div className="max-w-3xl mt-9">
+      <div className="max-w-3xl mt-9">
         <FadeInScrollTransition timeout={700}>
           <p className="px-4 py-2  border-b border-accent/75 flex gap-2">
             <a className="font-bold underline shrink" target="_blank"
-                                                                 href="https://ledord.se">
+              href="https://ledord.se">
               Ledord.se
             </a>
             <span>is a fun game.</span>
           </p>
-          <div className="flex  gap-2 flex-wrap justify-center py-5">
-            <div className="">
-
+          <div className="flex  gap-2 flex-wrap py-5">
+            <div className="px-4">
               It is just like That Word Game™ but with a little twist. Oh, and it is in Swedish, so there's that.
             </div>
           </div>
         </FadeInScrollTransition>
+      </div>
 
+      <div className="max-w-3xl mt-9">
+        <FadeInScrollTransition timeout={750}>
+          <p className="px-4 py-2  border-b border-accent/75 flex gap-2">
+            <a className="font-bold underline shrink" target="_blank"
+              href="https://lemodikrysset.se">
+              Lemodikrysset.se
+            </a>
+            <span>is another fun game.</span>
+          </p>
+          <div className="flex  gap-2 flex-wrap py-5">
+            <div className="px-4">
+              It is a musical crossword you build yourself and play with your friends. 
+            </div>
+          </div>
+        </FadeInScrollTransition>
       </div>
 
       <div className="max-w-3xl mt-9">
@@ -78,7 +93,7 @@ function PageContentStuffIMade() {
             {nmrs.map((n, idx) => {
               return (
                 <FadeInScrollTransition timeout={100} key={n}>
-                  <img src={`/made/${n}.png`} alt="" key={n} className="max-w-[150px] md:max-w-[250px]"/>
+                  <img src={`/made/${n}.png`} alt="" key={n} className="max-w-[150px] md:max-w-[250px]" />
                 </FadeInScrollTransition>
               )
             })
